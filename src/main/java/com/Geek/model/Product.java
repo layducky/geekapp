@@ -1,6 +1,5 @@
 package com.Geek.model;
 
-import java.time.Instant;
 import java.util.UUID;
 import lombok.*;
 import jakarta.persistence.*;
@@ -21,6 +20,7 @@ public class Product {
     private String name;
     private String image;
     private Double currentPrice;
+
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = true)

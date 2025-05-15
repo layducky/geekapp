@@ -1,6 +1,5 @@
 package com.Geek.model;
 
-import java.time.Instant;
 import java.util.UUID;
 import lombok.*;
 import jakarta.persistence.*;
@@ -18,10 +17,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.UUID)
     UUID id;
 
+    @Column(unique = true)
     private String username;
+    @Column(unique = true)
+    private String email;
     private String password;
     private String phonenumber;
-    private String email;
+    private String name;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Address> addresses = new ArrayList<>();

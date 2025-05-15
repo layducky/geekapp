@@ -1,6 +1,5 @@
 package com.Geek.model;
 
-import java.time.Instant;
 import java.util.UUID;
 import lombok.*;
 import jakarta.persistence.*;
@@ -19,8 +18,10 @@ public class Order {
     UUID id;
 
     private String status;
-
-    private String total_value;
+    private String totalValue;
+    private String size;
+    private String color;
+    private Integer quantity;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = true)
@@ -48,6 +49,4 @@ public class Order {
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
     private List<Product> product = new ArrayList<>();
-
-
 }

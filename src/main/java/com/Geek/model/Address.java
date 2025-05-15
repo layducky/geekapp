@@ -1,6 +1,5 @@
 package com.Geek.model;
 
-import java.time.Instant;
 import java.util.UUID;
 import lombok.*;
 import jakarta.persistence.*;
@@ -15,7 +14,7 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.UUID)
     UUID id;
 
-    private String name;
+    private String address;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
